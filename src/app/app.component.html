@@ -1,0 +1,34 @@
+<form #formularioConcepto="ngForm">
+  <div class="grid-x grid-padding-x grid-padding-y">
+    <div class="cell small-6 large-4">
+      <mat-form-field>
+        <input  matInput placeholder="concepto" name="Concepto" #Concepto="ngModel" [(ngModel)]="concepto">
+      </mat-form-field>
+    </div>
+    <div class="cell small-6 large-3">
+      <button mat-stroked-button (click)="buscarConcepto()">Buscar</button>
+    </div>
+    <!--<div class="small-2 cell" *ngFor="let red of redesSociales">
+    <mat-slide-toggle [checked]="checked" [disabled]="disabled">
+      <mat-icon svgIcon={{red.icon}}></mat-icon>
+    </mat-slide-toggle>
+  </div>!-->
+  </div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Resultado</h2>
+      </mat-card-title>
+      <mat-card-subtitle>
+        Resumen: Twitter {{tuits.length}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="cell" *ngFor="let tuit of tuits; let indice= index">
+          <app-tuit [tuit]="tuit"></app-tuit>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

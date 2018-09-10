@@ -1,0 +1,49 @@
+<mat-card class="tuit">
+  <div class="grid-x grid-padding-y grid-padding-x">
+    <div class="perfil cell small-12 large-3">
+      <div class="grid-y grid-padding-y">
+        <div class="cell">
+          <a [href]="urlPerfil">{{tuit.usuario.nick}}</a>
+        </div>
+        <div class="cell">
+          <div class="grid-x grid-padding-x">
+            <div class="cell large-4 small-4">
+              <mat-icon class="mat-icon-twitter"> supervised_user_circle</mat-icon> {{tuit.usuario.conteoSeguidores}}
+            </div>
+            <div class="cell large-4 small-4">
+              <mat-icon class="mat-icon-twitter"> supervisor_account </mat-icon> {{tuit.usuario.conteoAmigos}}
+            </div>
+            <div class="cell large-4 small-4">
+              <mat-icon class="mat-icon-twitter"> thumb_up_alt</mat-icon> {{tuit.usuario.conteoFavoritos}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text cell small-12  large-9">
+      <div class="grid-y grid-padding-y">
+        <div class="cell">
+          <div class="grid-x grid-padding-x">
+            <div class="cell large-3 small-6">
+              <mat-icon> date_range </mat-icon>{{tuit.fechaPublicacion | date: 'dd/MM/yyyy'}}
+            </div>
+            <div class="cell large-2 small-3">
+              <mat-icon>thumb_up_alt</mat-icon>{{tuit.conteoFavoritos}}
+            </div>
+            <div class="cell large-2 small-3">
+              <mat-icon>share</mat-icon>{{tuit.conteoRetweet}}
+            </div>
+          </div>
+        </div>
+        <div class="cell">
+          {{tuit.texto}}
+          <a [href]="tuit.usuario.url"> {{tuit.usuario.url}}</a>
+        </div>
+        <div class="cell" *ngIf="tuit.localizacion">
+          {{tuit.localizacion}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</mat-card>
